@@ -8,6 +8,7 @@
 
 import urllib.request
 import webbrowser
+from unidecode import unidecode
 from tkinter import *
 import sys
 
@@ -17,10 +18,10 @@ def func(*args):
     if (entry_text == ""):
         welcome_label.config(text="Gib zuerst eine Nummer ein.")
     else:
-        url='https://tel.local.ch/'+entry_text
+        url=f'https://www.local.ch/de/s/Switzerland/{unidecode(entry_text)}'
         webbrowser.open_new(url)
         eingabefeld.delete(0, END)
-        
+
 fenster = Tk()
 fenster.title("Telefonnummern Lookup")
 fenster.bind('<Return>',func)

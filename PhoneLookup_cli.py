@@ -7,6 +7,7 @@
 ######################################################
 
 import urllib.request
+from unidecode import unidecode
 import webbrowser
 from tkinter import *
 import sys
@@ -14,5 +15,5 @@ import sys
 
 entry_text = sys.argv
 entry = str(entry_text[1:])
-url='https://tel.local.ch/'+entry
+url=url=f'https://www.local.ch/de/s/Switzerland/{unidecode(entry)}'
 webbrowser.open_new(url)
